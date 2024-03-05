@@ -136,11 +136,14 @@ class Potential_Game :
                                    bounds = (0,None))
         
     def print_resource_values(self) :
-        table_rows = []
-        for i in range(self.k) :
-            if self.answers.x[i]>0 :
-                table_rows.append([self.D[i],self.answers.x[i]])
-        print(tabulate(table_rows))
+        if self.answers.x :
+            table_rows = []
+            for i in range(self.k) :
+                if self.answers.x[i]>0 :
+                    table_rows.append([self.D[i],self.answers.x[i]])
+            print(tabulate(table_rows))
+        else:
+            print('cannot print resource values; problem is infeasible.')
         
         
 if __name__ == "__main__" :

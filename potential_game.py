@@ -9,6 +9,7 @@ Created on Tue Mar  5 09:24:56 2024
 from itertools import chain, combinations
 import numpy as np
 from scipy import optimize as opt
+from tabulate import tabulate
 
 class Potential_Game :
     def __init__(self,Phi) :
@@ -133,6 +134,14 @@ class Potential_Game :
                                    A_eq = self.Aeq,
                                    b_eq = self.beq,
                                    bounds = (0,None))
+        
+    def print_resource_values(self) :
+        table_rows = []
+        for i in range(self.k) :
+            if self.answers.x[i]>0 :
+                table_rows.append([self.D[i],self.answers.x[i]])
+        print(tabulate(table_rows))
+        
         
 if __name__ == "__main__" :
     Phi = [[1,-1,-1],

@@ -6,6 +6,7 @@ Created on Fri Mar  1 10:22:38 2024
 """
 
 from potential_game import *
+from tabulate import tabulate
 
 if __name__ == "__main__" :
     Phi = [[1,-1,-1],
@@ -19,8 +20,4 @@ if __name__ == "__main__" :
     pg.solve_potential_function()
     print(pg.answers)
     
-    print(pg.D)
-    print(pg.R)
-    
-    
-    
+    pg.print_resource_values() 

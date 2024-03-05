@@ -136,7 +136,7 @@ class Potential_Game :
                                    bounds = (0,None))
         
     def print_resource_values(self) :
-        if self.answers.fun :
+        if self.answers.fun is not None :
             table_rows = []
             for i in range(self.k) :
                 if self.answers.x[i]>0 :

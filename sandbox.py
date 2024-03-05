@@ -9,15 +9,15 @@ from potential_game import *
 from tabulate import tabulate
 
 if __name__ == "__main__" :
-    Phi = [[1,-1,-1],
-           [.9,.8,-1],
-           [-1,.7,.6]]
-           # [-1,-1,.5]]
-    Phi = np.array(Phi)  
+    Phi = [[10,6,-1],
+           [8,6,-1],
+           [-1,4,7]]
+           # [-1,-1,5]]
+    Phi = np.array(Phi)
     
-        
+
     pg = Potential_Game(Phi)
     pg.solve_potential_function()
     print(pg.answers)
     
-    pg.print_resource_values() 
+    pg.print_resource_values()

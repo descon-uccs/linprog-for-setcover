@@ -12,6 +12,7 @@ from scipy import optimize as opt
 
 class Potential_Game :
     def __init__(self,Phi) :
+        # Phi: specified values are > -0.5, unspecified <= -0.5.
         self.Phi = Phi
         self.m = Phi.shape[0]
         self.n = Phi.shape[1]
@@ -81,8 +82,6 @@ class Potential_Game :
     def generate_constraint_matrices(self) :
         # given m x n array Phi specifying which values of potential function we want,
         # output Aeq beq Aineq bineq arrays specifying the LP constraints.
-        # Phi: specified values are > -0.5, unspecified <= -0.5.
-        # something will break if Phi is the wrong dimensions
         # k is # of resource constraints
         
         Phi = self.Phi
@@ -139,7 +138,7 @@ if __name__ == "__main__" :
     Phi = [[1,-1,-1],
            [.9,.8,-1],
            [-1,.7,.6],
-           [-1,-1,.5]]
+            [-1,-1,.5]]
     Phi = np.array(Phi)  
     
     # This code needs some stuff:
